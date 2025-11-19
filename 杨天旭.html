@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杨天旭</title>
+
+<style>
+
+    body{
+        margin: 0;
+        background-color: #f5f5f5;
+    }
+
+    .container{
+        width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .header-context {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 20px;
+    }
+
+    .name{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .name-context {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .edu-title{
+        background-color: rgb(215, 214, 214);
+        height: 30px;
+    }
+
+    .section-title{
+
+        display: flex;
+        align-items: center;
+        background-color: rgb(215, 214, 214);
+        height: 30px;
+        margin-bottom: 15px;
+    }
+
+    .little-icon{
+        width: 7px;
+        height: 100%;
+        background-color: black;
+        margin-left: 12px;
+    }
+    
+    .section-title span{
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .school{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .course span{
+        font-weight: bold;
+    }
+
+    .company{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .company span{
+        font-weight: bold;
+    }
+
+    .header-context li {
+        list-style: none;
+        margin: 5px;
+    }
+
+    .introduction{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    p{
+        text-indent: 2rem;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 25px 0;
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="name">
+                <span class="name-context">杨天旭</span>
+            </div>
+            <div class="header-context">
+                <ul>
+                    <li>在校</li>
+                    <li>2005-01-30</li>
+                    <li>2360046630@qq.com</li>
+                </ul>
+                <ul>
+                    <li>13209439635</li>
+                    <li>陕西省西安市</li>
+                    <li>https://github.com/TirsonYang</li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <div class="education">
+            <div class="section-title">
+                <div class="little-icon"></div>
+                <span>教育经历</span>
+            </div>
+            <div class="edu-context">
+                <div class="company">
+                    <span>西安电子科技大学</span>
+                    <span>软件工程 本科</span>
+                    <span>2023/9-2027/6</span>
+                </div>
+                <div class="course">
+                    <ul>
+                        <li><span>主修课程</span>：数据结构、操作系统、计算机组成原理、计算机网络、编译原理、数据库系统</li>
+                        <li>
+                            <span>英语水平</span>：CET-4
+                        </li>
+                        <li>
+                            <span>CSP认证分数</span>：170
+                        </li>
+                        <li>
+                            <span>软考中级</span>：软件设计师
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="section-title">
+                <div class="little-icon"></div>
+                <span class="edu-context">专业技能</span>
+            </div>
+            <div>
+                <ul>
+                    <li>掌握数据结构、计算机组成原理、操作系统、计算机网络</li>
+                    <li>熟悉Java语法、集合，掌握反射、多线程等，掌握面向对象编程思想</li>
+                    <li>熟练掌握Spring、SpringBoot、SpringMVC、Mybatis、Mybatis-plus等主流开源框架</li>
+                    <li>掌握MySQL等关系型数据库，掌握索引、事务等</li>
+                    <li>掌握非关系型数据库Redis及其数据结构，了解缓存穿透、缓存击穿等问题的解决方案</li>
+                    <li>掌握SpringCloud微服务框架，掌握RabbitMQ、Nacos、Elasticsearch等中间件的使用</li>
+                    <li>掌握HTML、CSS、JavaScript，掌握前端框架Vue</li>
+                    <li>掌握IDEA、Maven、Git等开发工具的使用</li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div>
+            <div class="section-title">
+                <div class="little-icon"></div>
+                <span class="edu-context">实习经历</span>
+            </div>
+
+            <div class="company">
+                <span>成都运达科技股份有限公司</span>
+                <span>Java后端开发</span>
+                <span>2025/7-2025/9</span>
+            </div>
+            <div class="work">
+                <ul>
+                    <li>
+                        独立负责 Restful API 的设计与实现，完成近 20 个核心业务接口开发；编写单元测试用例覆盖 95% 以上接口场景，保障接口功能与业务需求 100% 匹配，支撑系统顺利上线。
+                    </li>
+                    <li>
+                        针对下游数据提取需求，设计高效查询逻辑，将单次数据提取耗时从 5s 缩短至 1s 内；服务上线后支持 3 个下游业务部门的日常分析需求，每月减少约 10 小时人工数据整理时间，间接提升业务决策效率。
+                    </li>
+                    <li>
+                        定位并修复 8 个高频数据不一致 bug，通过新增数据校验规则、优化同步机制，将系统月度故障率从 12% 降至 3% 以下，显著提升检修系统运行稳定性.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="project">
+            <div class="section-title">
+                <div class="little-icon"></div>
+                <span class="edu-context">项目经历</span>
+            </div>
+
+            <div>
+                <div class="company">
+                    <span>net-mall</span>
+                    <span>核心开发者</span>
+                    <span>2025/7-2025/9</span>
+                </div>
+                <div class="introduction">
+                    <p>
+                        主导西安某网吧线上点单系统的全栈开发（前端+后端）、联调测试及部署上线与运维工作，系统支持会员上机后自动绑定机位并完成线上点单，助力前台高效处理商品销售与配送流程，提升网吧服务效率
+                    </p>
+                </div>
+                <div class="work">
+                    <ul>
+                        <li>负责用户认证与权限体系搭建：前端通过路由守卫控制页面访问权限，后端采用JWT令牌实现用户身份认证，结合ThreadLocal与拦截器完成token校验；通过账号区分前台与超管角色，实现界面与功能权限的精细化管控，保障系统操作安全性</li>
+                        <li>设计实时交互与订单管理机制：基于WebSocket构建客户端与服务端长连接，实现新订单实时提醒功能，确保前台及时响应；采用SpringTask定时任务完成订单状态自动更新，同步实现优惠券状态定时检查，并在会员查询时二次校验，保障优惠券状态准确性</li>
+                        <li>优化高并发场景下的系统性能：使用Redis对商品进行缓存，有效缓解高并发时点单请求导致的商品超卖问题，提升系统稳定性</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div>
+                <div class="company">
+                    <span>易聊</span>
+                    <span>后端开发</span>
+                    <span>2025/3-2025/6</span>
+                </div>
+                <div class="introduction">
+                    <p>
+                        即时通讯软件“易聊”（功能对标微信）的Java后端开发，负责核心业务模块的设计与实现，支撑软件账号体系、视角关系、实时交互及个人中心等核心功能
+                    </p>
+                </div>
+                <div class="work">
+                    <ul>
+                        <li>负责联系人及群组体系开发，完成联系人管理、好友关系维护，以及群组创建、成员管理、解散等全流程功能</li>
+                        <li>基于Netty框架与WebSocket协议，设计实时消息交互系统，实现文本消息推送、表情包传输及多类型文件收发功能，优化消息传输效率，保障高并发场景下的实时性与稳定性</li>
+                        <li>开发个人信息后端模块，实现用户基本信息修改、密码重置、安全退出等功能，兼顾用户操作便携性与数据修改的安全性</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
