@@ -64,6 +64,17 @@
         margin-bottom: 15px;
     }
 
+    .section-title.collapsed + .section-content{
+        max-height: 0;
+        margin-bottom: -18px;
+    }
+
+    .section-content {
+        max-height: 2000px;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
     .little-icon{
         width: 7px;
         height: 100%;
@@ -126,6 +137,15 @@
 </style>
 
 </head>
+
+<script>
+    
+    function collapse(clicked){
+        clicked.classList.toggle('collapsed');
+    }
+
+</script>
+
 <body>
     <div class="container">
         <div class="header">
@@ -148,11 +168,11 @@
         </div>
 
         <div class="education">
-            <div class="section-title">
+            <div class="section-title" onclick="collapse(this)">
                 <div class="little-icon"></div>
                 <span>教育经历</span>
             </div>
-            <div class="edu-context">
+            <div class="section-content">
                 <div class="company">
                     <span>西安电子科技大学</span>
                     <span>软件工程 本科</span>
@@ -177,11 +197,11 @@
         </div>
 
         <div>
-            <div class="section-title">
+            <div class="section-title" onclick="collapse(this)">
                 <div class="little-icon"></div>
                 <span class="edu-context">专业技能</span>
             </div>
-            <div>
+            <div class="section-content">
                 <ul>
                     <li>掌握数据结构、计算机组成原理、操作系统、计算机网络</li>
                     <li>熟悉Java语法、集合，掌握反射、多线程等，掌握面向对象编程思想</li>
@@ -198,17 +218,17 @@
 
 
         <div>
-            <div class="section-title">
+            <div class="section-title" onclick="collapse(this)">
                 <div class="little-icon"></div>
                 <span class="edu-context">实习经历</span>
             </div>
 
-            <div class="company">
-                <span>成都运达科技股份有限公司</span>
-                <span>Java后端开发</span>
-                <span>2025/7-2025/9</span>
-            </div>
-            <div class="work">
+            <div class="section-content">
+                <div class="company">
+                    <span>成都运达科技股份有限公司</span>
+                    <span>Java后端开发</span>
+                    <span>2025/7-2025/9</span>
+                </div>
                 <ul>
                     <li>
                         独立负责 Restful API 的设计与实现，完成近 20 个核心业务接口开发；编写单元测试用例覆盖 95% 以上接口场景，保障接口功能与业务需求 100% 匹配，支撑系统顺利上线。
@@ -225,52 +245,53 @@
 
 
         <div class="project">
-            <div class="section-title">
+            <div class="section-title" onclick="collapse(this)">
                 <div class="little-icon"></div>
                 <span class="edu-context">项目经历</span>
             </div>
-
-            <div>
-                <div class="company">
-                    <span>net-mall</span>
-                    <span>核心开发者</span>
-                    <span>2025/7-2025/9</span>
+            <div class="section-content">
+                <div>
+                    <div class="company">
+                        <span>net-mall</span>
+                        <span>核心开发者</span>
+                        <span>2025/7-2025/9</span>
+                    </div>
+                    <div class="introduction">
+                        <p>
+                            主导西安某网吧线上点单系统的全栈开发（前端+后端）、联调测试及部署上线与运维工作，系统支持会员上机后自动绑定机位并完成线上点单，助力前台高效处理商品销售与配送流程，提升网吧服务效率
+                        </p>
+                    </div>
+                    <div class="work">
+                        <ul>
+                            <li>负责用户认证与权限体系搭建：前端通过路由守卫控制页面访问权限，后端采用JWT令牌实现用户身份认证，结合ThreadLocal与拦截器完成token校验；通过账号区分前台与超管角色，实现界面与功能权限的精细化管控，保障系统操作安全性</li>
+                            <li>设计实时交互与订单管理机制：基于WebSocket构建客户端与服务端长连接，实现新订单实时提醒功能，确保前台及时响应；采用SpringTask定时任务完成订单状态自动更新，同步实现优惠券状态定时检查，并在会员查询时二次校验，保障优惠券状态准确性</li>
+                            <li>优化高并发场景下的系统性能：使用Redis对商品进行缓存，有效缓解高并发时点单请求导致的商品超卖问题，提升系统稳定性</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="introduction">
-                    <p>
-                        主导西安某网吧线上点单系统的全栈开发（前端+后端）、联调测试及部署上线与运维工作，系统支持会员上机后自动绑定机位并完成线上点单，助力前台高效处理商品销售与配送流程，提升网吧服务效率
-                    </p>
-                </div>
-                <div class="work">
-                    <ul>
-                        <li>负责用户认证与权限体系搭建：前端通过路由守卫控制页面访问权限，后端采用JWT令牌实现用户身份认证，结合ThreadLocal与拦截器完成token校验；通过账号区分前台与超管角色，实现界面与功能权限的精细化管控，保障系统操作安全性</li>
-                        <li>设计实时交互与订单管理机制：基于WebSocket构建客户端与服务端长连接，实现新订单实时提醒功能，确保前台及时响应；采用SpringTask定时任务完成订单状态自动更新，同步实现优惠券状态定时检查，并在会员查询时二次校验，保障优惠券状态准确性</li>
-                        <li>优化高并发场景下的系统性能：使用Redis对商品进行缓存，有效缓解高并发时点单请求导致的商品超卖问题，提升系统稳定性</li>
-                    </ul>
+                <hr>
+    
+                <div>
+                    <div class="company">
+                        <span>易聊</span>
+                        <span>后端开发</span>
+                        <span>2025/3-2025/6</span>
+                    </div>
+                    <div class="introduction">
+                        <p>
+                            即时通讯软件“易聊”（功能对标微信）的Java后端开发，负责核心业务模块的设计与实现，支撑软件账号体系、视角关系、实时交互及个人中心等核心功能
+                        </p>
+                    </div>
+                    <div class="work">
+                        <ul>
+                            <li>负责联系人及群组体系开发，完成联系人管理、好友关系维护，以及群组创建、成员管理、解散等全流程功能</li>
+                            <li>基于Netty框架与WebSocket协议，设计实时消息交互系统，实现文本消息推送、表情包传输及多类型文件收发功能，优化消息传输效率，保障高并发场景下的实时性与稳定性</li>
+                            <li>开发个人信息后端模块，实现用户基本信息修改、密码重置、安全退出等功能，兼顾用户操作便携性与数据修改的安全性</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <hr>
-
-            <div>
-                <div class="company">
-                    <span>易聊</span>
-                    <span>后端开发</span>
-                    <span>2025/3-2025/6</span>
-                </div>
-                <div class="introduction">
-                    <p>
-                        即时通讯软件“易聊”（功能对标微信）的Java后端开发，负责核心业务模块的设计与实现，支撑软件账号体系、视角关系、实时交互及个人中心等核心功能
-                    </p>
-                </div>
-                <div class="work">
-                    <ul>
-                        <li>负责联系人及群组体系开发，完成联系人管理、好友关系维护，以及群组创建、成员管理、解散等全流程功能</li>
-                        <li>基于Netty框架与WebSocket协议，设计实时消息交互系统，实现文本消息推送、表情包传输及多类型文件收发功能，优化消息传输效率，保障高并发场景下的实时性与稳定性</li>
-                        <li>开发个人信息后端模块，实现用户基本信息修改、密码重置、安全退出等功能，兼顾用户操作便携性与数据修改的安全性</li>
-                    </ul>
-                </div>
-            </div>
 
         </div>
     </div>
