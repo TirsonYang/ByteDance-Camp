@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import './Product.module.css';
 import {Pagination} from 'antd';
 import ProductItem from "./ProductItem";
-import styles from "./Product.module.css";
 
 // 图片路径
 import photo1 from "../assets/photo/1.png";
@@ -17,6 +16,7 @@ import photo9 from "../assets/photo/9.png";
 import photo10 from "../assets/photo/10.png";
 import photo11 from "../assets/photo/11.png";
 
+import styles from "./Product.module.css";
 
 const mockProducts = [
     {id:1, photoUrl: photo1,description:"ins网红辣妹通勤免烤速干指甲油 持久不掉色奶茶裸粉豆沙色可剥无毒美甲" ,price:59},
@@ -32,7 +32,7 @@ const mockProducts = [
     {id:11, photoUrl: photo11,description:"轻薄笔记本电脑高性能大内存长续航学生党办公电竞游戏本高清屏网红同款",price:5999}
 ]
 
-function Product({ searchTerm }){
+function Product({ searchTerm, sortType }){
 
     // 分页
     const [currentPage,setCurrentPage]=useState(1);
@@ -44,14 +44,22 @@ function Product({ searchTerm }){
     }
     
     // 模糊搜索商品
-    const filteredProducts = mockProducts.filter(product =>
+    let filteredProducts = mockProducts.filter(product =>
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
     
-    const currentProducts = filteredProducts.slice(startIndex,endIndex);
-    const totalPages = Math.ceil(filteredProducts.length / pageSize);
+    // 根据排序类型对商品进行排序
+    if (sortType === "price-desc") {
+        // 价格从高到低
+        filteredProducts.sort((a, b) => b.price - a.price);
+    } else if (sortType === "price-asc") {
+        // 价格从低到高
+        filteredProducts.sort((a, b) => a.price - b.price);
+    }
+    // 默认情况下不排序（保持原始顺序）
     
-
+    const currentProducts = filteredProducts.slice(startIndex,endIndex);
+    // const totalPages = Math.ceil(filteredProducts.length / pageSize);
 
     return (
         <div className={styles["product-container"]}>
@@ -63,7 +71,6 @@ function Product({ searchTerm }){
                     photoUrl={product.photoUrl}
                     description={product.description}
                     price={product.price}
-                    totalPages={totalPages}
                     />
                 ))}
             </div>
