@@ -1,0 +1,38 @@
+.product-item-container{
+    width: 280px;
+    height: 400px;
+    background-color: white;
+}
+
+.photo-item{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    width: 240px;
+    height: auto;
+}
+
+.photo-item:hover{
+    cursor: auto;
+}
+
+.price-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.price{
+    color: rgb(255, 77, 0);
+    font-weight: bold;
+}
+
+.add-icon {
+    width: 30px;
+    height: 30px;
+}
