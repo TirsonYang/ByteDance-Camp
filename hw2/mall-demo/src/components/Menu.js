@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Menu.module.css";
 import { Button } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
@@ -9,20 +8,39 @@ import refresh from "../assets/refresh.svg";
 import home from "../assets/home.svg";
 import shop from "../assets/shop.svg";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Menu({ onSearchChange, onSortChange }) {
 
     const [inputValue, setInputValue] = useState("");
+    
+    // 防抖延迟500ms
+    const debounceDelay = 500;
+    const [debounceTimer, setDebounceTimer] = useState(null);
+    const handleInputChange = (e) => {
+        const value = e.target.value;
+        setInputValue(value);
+        
+        if (debounceTimer) {
+            clearTimeout(debounceTimer);
+        }
+        
+        const newTimer = setTimeout(() => {
+            onSearchChange(value);
+        }, debounceDelay);
+        
+        setDebounceTimer(newTimer);
+    }
+
     function reload() {
         window.location.reload();
     }
 
-    const handleInputChange = (e) => {
-        setInputValue(e.target.value);
-    }
 
     const handleSearch = () => {
+        if (debounceTimer) {
+            clearTimeout(debounceTimer);
+        }
         onSearchChange(inputValue);
     }
 
@@ -44,6 +62,15 @@ function Menu({ onSearchChange, onSortChange }) {
     const handleSortClick = ({ key }) => {
         onSortChange(key);
     }
+
+
+    useEffect(() => {
+        return () => {
+            if (debounceTimer) {
+                clearTimeout(debounceTimer);
+            }
+        };
+    }, [debounceTimer]);
 
     return (
         <div className={styles["menu-container"]}>

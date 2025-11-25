@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import './Product.module.css';
 import {Pagination} from 'antd';
 import ProductItem from "./ProductItem";
@@ -43,20 +43,15 @@ function Product({ searchTerm, sortType }){
         setCurrentPage(page);
     }
     
-    // 模糊搜索商品
     let filteredProducts = mockProducts.filter(product =>
         product.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
     
-    // 根据排序类型对商品进行排序
     if (sortType === "price-desc") {
-        // 价格从高到低
         filteredProducts.sort((a, b) => b.price - a.price);
     } else if (sortType === "price-asc") {
-        // 价格从低到高
         filteredProducts.sort((a, b) => a.price - b.price);
     }
-    // 默认情况下不排序（保持原始顺序）
     
     const currentProducts = filteredProducts.slice(startIndex,endIndex);
     // const totalPages = Math.ceil(filteredProducts.length / pageSize);

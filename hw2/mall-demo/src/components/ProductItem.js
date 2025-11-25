@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ProductItem.module.css";
 
 import add from "../assets/add.svg";
