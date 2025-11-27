@@ -1,0 +1,90 @@
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(225,235,234);
+    height: 100vh;
+    width: 20vw;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(40,182,114);
+}
+
+.home-container{
+    margin: 20px;
+}
+
+.menu-list-container .icon{
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+}
+
+.menu-list-container .text{
+    font-size: 15px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.statistics-container{
+    display: grid;
+    grid-template-columns: 125px 125px;
+    grid-template-rows: 75px 75px;
+}
+
+.statistics-card{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,rgb(246,251,249),rgb(225,235,234));
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(210, 220, 218, 0.6);
+    margin: 20px;
+}
+
+.statistics-title{
+    color: rgb(115, 121, 124);
+}
+
+.statistics-container span{
+    color: rgb(115, 121, 124);
+    font-size: 13px;
+}
+
+.icon-container{
+    background-color: rgb(170,203,185);
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.icon-container .icon{
+    width: 15px;
+    height: 15px;
+}
+
+.follow-me-container{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 20px;
+    width: 250px;
+}
+
+.link-wrapper{
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}

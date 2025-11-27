@@ -1,0 +1,39 @@
+.body-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 40vw;
+    height: 100vh;
+}
+
+.body-image{
+    height: 30vh;
+    width: 100%;
+}
+
+.body-image img{
+    height: 100%;
+    width: 100%;
+}
+
+.body-text-container{
+    background-color: rgb(246,251,249);
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* 新增：添加文章容器样式 */
+.add-article-container {
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(210, 220, 218, 0.6);
+  box-sizing: border-box;
+}
