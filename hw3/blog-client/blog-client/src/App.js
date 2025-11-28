@@ -13,7 +13,7 @@ function App() {
     return (
         <BrowserRouter>
             {/* 导航栏：放新增博客按钮，所有页面都能看到 */}
-      <nav style={{ background: '#f5f5f5' }}>
+      <nav style={{ background: 'rgb(210,220,226)'}}>
         {/* 首页链接 */}
         <Link to="/" style={{ marginRight: '20px', textDecoration: 'none'}}>首页</Link>
         {/* 新增博客按钮（跳转新增页面） */}

@@ -4,8 +4,10 @@
     justify-content: start;
     align-items: center;
     background-color: rgb(225,235,234);
-    height: 100vh;
+    height: 90vh;
     width: 20vw;
+    margin-top: 20px;
+    border-radius: 8px 0 0 8px;
 }
 
 .title{

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 // 导入数据库连接池（config/db.js 导出的）
 const pool = require('../config/db');
+const { formatTime } = require('../utils/time');
 
 // ====================== 接口1：新增文章 ======================
 // 请求方式：POST
@@ -10,15 +11,17 @@ const pool = require('../config/db');
 router.post('/add', async (req, res) => {
   try {
     // 解构前端传的参数（categoryId默认0：未分类）
-    const { title, content, categoryId = 0 } = req.body;
+    const { title, content, categoryId=0,} = req.body;
     // 校验必填参数
     if (!title || !content) {
       return res.json({ code: 400, msg: '标题和内容不能为空' });
     }
+
+    const createTime=formatTime();
     // 插入文章表
     const [result] = await pool.execute(
-      'INSERT INTO article (title, content, category_id) VALUES (?, ?, ?)',
-      [title, content, categoryId]
+      'INSERT INTO article (title, content, category_id, create_time) VALUES (?, ?, ?, ?)',
+      [title, content, categoryId,createTime]
     );
     // 返回成功结果（包含新增的文章ID）
     res.json({

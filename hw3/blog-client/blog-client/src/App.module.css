@@ -5,7 +5,8 @@
   height: 40px;
   border-radius: 50%; /* 圆角50%实现圆形 */
   background-color: rgb(170,203,185); /* 圆形背景色（可改为透明+边框实现空心圆） */
-  border: 2px solid #e1ebea; /* 可选：圆形边框 */
+  /* border: 2px solid #e1ebea;  */
+  border: none;
   position: relative;  /* 给伪元素定位用 */
   margin: 2px;
   margin-right: 60px;

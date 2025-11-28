@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
+import timeFormat from '../utils/TimeUtil';
+
 function NewArticle() {
   // 1. 路由参数：获取文章ID（编辑模式才有）
   const { id } = useParams(); // 从 /new-article/:id 中取id
@@ -16,6 +18,7 @@ function NewArticle() {
 
   // 3. 路由跳转
   const navigate = useNavigate();
+
 
   // 4. 编辑模式：加载文章详情（组件挂载时）
   useEffect(() => {
@@ -57,14 +60,14 @@ function NewArticle() {
           articleId: id, // 后端需要的articleId
           title,
           content,
-          categoryId
+          categoryId,
         });
       } else {
         // 新增模式：调用原有新增接口
         res = await axios.post('http://localhost:3001/api/article/add', {
           title,
           content,
-          categoryId
+          categoryId,
         });
       }
 

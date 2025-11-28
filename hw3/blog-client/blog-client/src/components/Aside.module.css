@@ -3,8 +3,10 @@
     flex-direction: column;
     justify-content: start;
     background-color: rgb(226,236,235);
-    height: 100vh;
+    height: 90vh;
     width: 20vw;
+    margin-top: 20px;
+    border-radius: 0 8px 8px 0;
 }
 
 .about-me-content-container{
@@ -17,6 +19,8 @@
 .about-me-container .title{
     color: rgb(157,167,166);
     font-weight: bold;
+    margin: 20px;
+    margin-bottom: 10px;
 }
 
 .text-container{
@@ -72,4 +76,22 @@
 
 .circle-cross:hover{
     cursor: pointer;
+}
+
+.like-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin:20px;
+}
+
+.like-item{
+    color: gray;
+    padding: 10px;
+}
+
+.like-item:hover{
+    cursor: pointer;
+    color: rgb(146, 154, 154);
 }
