@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
-import timeFormat from '../utils/TimeUtil';
 
 function NewArticle() {
   // 1. 路由参数：获取文章ID（编辑模式才有）

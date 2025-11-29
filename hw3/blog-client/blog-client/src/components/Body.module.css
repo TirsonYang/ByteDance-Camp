@@ -38,3 +38,51 @@
   box-shadow: 0 2px 8px rgba(210, 220, 218, 0.6);
   box-sizing: border-box;
 }
+
+.circle-cross {
+  /* 1. 基础圆形样式 */
+  width: 40px;       /* 圆形大小（宽高相等） */
+  height: 40px;
+  border-radius: 50%; /* 圆角50%实现圆形 */
+  background-color: rgb(170,203,185); /* 圆形背景色（可改为透明+边框实现空心圆） */
+  /* border: 2px solid #e1ebea;  */
+  border: none;
+  position: relative;  /* 给伪元素定位用 */
+  margin: 2px;
+  /* margin-right: 10px; */
+}
+
+/* 2. 横向线（十字的横） */
+.circle-cross::before {
+  content: '';        /* 伪元素必须有content */
+  position: absolute; /* 绝对定位 */
+  top: 50%;           /* 垂直居中 */
+  left: 15%;          /* 横向线左右留边（控制十字长度） */
+  right: 15%;
+  height: 6px;        /* 十字线条粗细 */
+  background-color: #ffffff; /* 十字颜色 */
+  transform: translateY(-50%);
+}
+
+/* 3. 纵向线（十字的竖） */
+.circle-cross::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 15%;           
+  bottom: 15%;
+  width: 6px;         /* 十字线条粗细 */
+  background-color: #ffffff; /* 十字颜色 */
+  transform: translateX(-50%); 
+}
+
+.circle-cross:hover{
+    cursor: pointer;
+}
+
+.add-circle-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}

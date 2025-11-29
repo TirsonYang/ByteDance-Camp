@@ -7,6 +7,7 @@ import appendixImg from '../assets/image/appendix.svg'
 import walletImg from '../assets/image/wallet.svg'
 import personImg from '../assets/image/person.svg'
 import githubImg from '../assets/image/github.svg'
+import { Link } from 'react-router-dom'
 
 
 function Menu(){
@@ -15,7 +16,9 @@ function Menu(){
         <div className={styles['menu-container']}>
             <span className={styles['title']}>blog</span>
             <div className={styles['menu-list-container']}>
+                {/* TODO 路由跳转主页面*/}
                 <div className={styles['home-container']}>
+                    
                     <img src={homeImg} alt='home' className={styles['icon']}></img>
                     <span className={styles['text']}>主页</span>
                 </div>
@@ -30,10 +33,14 @@ function Menu(){
                     <span className={styles['text']}>片刻</span>
                 </div>
 
-                <div className={styles['home-container']}>
-                    <img src={cameraImg} alt='home' className={styles['icon']}></img>
-                    <span className={styles['text']}>专题</span>
-                </div>
+                <Link to={'/new-category'}>
+                
+                    <div className={styles['home-container']}>
+                        {/* TODO 路由跳转分类 */}
+                        <img src={cameraImg} alt='home' className={styles['icon']}></img>
+                        <span className={styles['text']}>专题</span>
+                    </div>
+                </Link>
                 
                 <div className={styles['home-container']}>
                     <img src={appendixImg} alt='home' className={styles['icon']}></img>
@@ -41,7 +48,8 @@ function Menu(){
                 </div>
 
                 <div className={styles['home-container']}>
-                    <img src={walletImg} alt='home' className={styles['icon']}></img>
+                    <img src={walletImg} alt='home' className={styles['icon']}
+                    ></img>
                     <span className={styles['text']}>留言</span>
                 </div>
 
@@ -63,7 +71,7 @@ function Menu(){
                         <span>18</span>
                     </div>
                     <div className={styles['statistics-card']}>
-                        <span>分类</span>
+                        <span>专题</span>
                         <span>7</span>
                     </div>
                     <div className={styles['statistics-card']}>

@@ -4,6 +4,8 @@ import BlogItem from './BlogItem'
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
 function Body() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -86,6 +88,11 @@ function Body() {
         ) : (
           !loading && !error && <div style={{ padding: '20px' }}>暂无文章</div>
         )}
+          <Link to="/new-article" className={styles['add-circle-button']}>
+
+            <button className={styles['circle-cross']}>
+                  </button>
+          </Link>
       </div>
     </div>
   );
